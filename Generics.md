@@ -21,7 +21,7 @@ public class Equality {
 }
 ```
 
-In this code, add has two parameters — namely, a and b. These parameters are what help make up what we call the **signature** of a method. A method's signature can be created in many ways, in the number in type of parameters, it's return type, etc.
+In this code, equals has two parameters — namely, a and b. These parameters are what help make up what we call the **signature** of a method. A method's signature can be created in many ways, in the number in type of parameters, it's return type, etc.
 
 Java method signatures are built upon the following principles:
  - The method name
@@ -79,9 +79,11 @@ public class Main {
 }
 ```
 
-The signature for ```Equality<Integer>.equals``` is ``` equals_Integer_Integer ```. But wait, we never defined a method called equals that takes two Integer's as parameters! you say. You'd be both correct, and incorrect simultaneously. We never explicitly declared a method with that signature, but the java compiler did. When it saw that you provided a type argument to your Equality class in ``` Equality<Integer> integersEqual... ``` you told the compiler to make that specific class. A class that now replaces every instance of T inside it with Integer, essentially akin to how in a method if you pass an argument you get to see that argument within the method itself.
+The signature for ``` Equality<Integer>.equals ``` is ``` equals_Integer_Integer ```. But wait, we never defined a method called equals that takes two Integer's as parameters! you say. You'd be both correct, and incorrect simultaneously. We never explicitly declared a method with that signature, but the java compiler did. When it saw that you provided a type argument to your Equality class in ``` Equality<Integer> integersEqual... ``` you told the compiler to make that specific class. A class that now replaces every instance of T inside it with Integer, essentially akin to how in a method if you pass an argument you get to see that argument within the method itself.
 
-So, the compiler actually did some programming itself. It made a program that has that signature, which we can then freely call ourselves. We could even do the following:
+So, the compiler actually did some programming itself. It made a program that has that signature, which we can then freely call ourselves. It even means we don't have to pay for what we don't write, if we don't ever call equals with a certain type, then we never generate the method for that type -- only for types we actually use it for.
+
+Even more fun, is that we can do the following:
 
 ```java
 public class Main {
@@ -90,12 +92,12 @@ public class Main {
         System.out.println(integersEqual.equals(new Integer(1), new Integer(1))); // Out: true
 
         Equality<Double> doublesEqual = new Equality<>();
-        System.out.println(doublesEqual.equals(new Double(1), new Double(2))); // Out: true
+        System.out.println(doublesEqual.equals(new Double(1), new Double(1))); // Out: true
     }
 }
 ```
 
-And this would have the compiler not only generate the above signature, but one for Doubles as well -- ```equals_Double_Double```.
+And this would have the compiler not only generate the above signature for Integers, but one for Doubles as well -- ``` equals_Double_Double ```.
 
 ## Let's get crazy
 So, we've seen that this works with a single type parameter. But what if we wanted to compare Integers and Doubles together? Well, let's just try what you'd do if you wanted to add another parameter to a method -- seperate the types with a comma:
@@ -137,8 +139,8 @@ public class Main {
 }
 ```
 
-Now, obviously the 'false' there is not ideal, but that's due to Java and not the actual implementation here (as in, the point still stands on not having to rewrite the code, despite it giving an incorrect value here it does quite often lead to deduplication of code).
+Now, obviously the 'false' there is not ideal, but that's due to Java and not the actual implementation here (as in, the point still stands on not having to rewrite the code, despite it giving an incorrect value here it does quite often lead to deduplication of code). The signature for this method is ``` equals_Integer_Double ```, which again is made by the compiler and not us.
 
-So, that's generics. Mostly. There are other things that you can do, standards you can follow, etc. However, that should be enough to get you started along your journey's.
+So, that's generics. Mostly. There are other things that you can do, standards you can follow, etc. However, that should be enough to get you started along your journey.
 
-Good luck with the rest of your learning ;) <3
+Good luck with the rest of your learning
