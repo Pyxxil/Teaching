@@ -29,11 +29,11 @@ Java method signatures are built upon the following principles:
 
 In future, when I talk about a method signature I will refer to it in the following way:
 
-``` methodName_Param1Type_Param2Type_...```
+``` methodName_Param1Type_Param2Type_... ```
 
-Where there could be any number of Parameter types, each joined with an underscore. The above ```equals``` has the following signature for example:
+Where there could be any number of Parameter types, each joined with an underscore. The above ``` equals ``` has the following signature for example:
 
-```equals_String_String```
+``` equals_String_String ```
 
 Now, this is all well and good, but the question now becomes -- why is any of this important? And that is an astute point, reader. So let's quickly move on.
 
@@ -51,7 +51,7 @@ public class Equality {
 }
 ```
 
-Well, that's not too bad -- we only realistically added 4 lines. This new method would have the signature ```equals_Int_Int```, but outside of that it's essentially no different to the previous definition of equals.
+Well, that's not too bad -- we only realistically added 4 lines. This new method would have the signature ``` equals_Int_Int ```, but outside of that it's essentially no different to the previous definition of equals.
 
 Then we also want to think about if in future we also wanted to be able to check equality of floating point values? Lists? Our own types? Well, now you'd have to add a new method for each of those. And what happens if we at some point decide that we not only want to be able to check equality of int's to int's, but int's to float's, or vice versa?
 
@@ -79,7 +79,7 @@ public class Main {
 }
 ```
 
-The signature for Equality<Integer>.equals is ```equals_Integer_Integer```. But wait, we never defined a method called equals that takes two Integer's as parameters! you say. You'd be both correct, and incorrect simultaneously. We never explicitly declared a method with that signature, but the java compiler did. When it saw that you provided a type argument to your Equality class in ```Equality<Integer> integersEqual...``` you told the compiler to make that specific class. A class that now replaces every instance of T inside it with Integer, essentially akin to how in a method if you pass an argument you get to see that argument within the method itself.
+The signature for ```Equality<Integer>.equals``` is ``` equals_Integer_Integer ```. But wait, we never defined a method called equals that takes two Integer's as parameters! you say. You'd be both correct, and incorrect simultaneously. We never explicitly declared a method with that signature, but the java compiler did. When it saw that you provided a type argument to your Equality class in ``` Equality<Integer> integersEqual... ``` you told the compiler to make that specific class. A class that now replaces every instance of T inside it with Integer, essentially akin to how in a method if you pass an argument you get to see that argument within the method itself.
 
 So, the compiler actually did some programming itself. It made a program that has that signature, which we can then freely call ourselves. We could even do the following:
 
