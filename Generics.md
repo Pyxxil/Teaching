@@ -1,11 +1,12 @@
 # Generics
 
-(Just a small note here: Java isn't my strongest language, I understand C++ much better, so some of the following is not likely to be what would be considered *good* practice in Java but it's the idea that counts anyways, right?)
+
+### Preface
+
+Java isn't my strongest language, I understand C++ much better, so some of the following is not likely to be what would be considered *good* practice in Java but it's the idea that counts anyways, right?
 
 ## Introduction
-So, you’re confused on what ‘Generics’ are. Don’t worry, most people are to some extent. It may surprise you, but even I struggled with them at some point (who knew I couldn’t know something? Consider me shocked too).
-
-Generics are kind of straight forward once you understand them, but of course that’s always the biggest hurdle isn’t it? Anyways, let’s take a step back first.
+So, you’re confused on what ‘Generics’ are. Don’t worry, most people are to some extent. Generics are kind of straight forward once you understand them, but of course that’s always the biggest hurdle isn’t it? Anyways, let’s take a step back first.
 
 ## Method signatures
 
