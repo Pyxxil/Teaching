@@ -1,9 +1,18 @@
-# Multithreading
+---
+title: "Multithreading"
+last_modified_at: 2019-09-17T11:20:02+12:00
+categories:
+  - Teaching
+tags:
+  - Threading
+  - Multithreading
+  - Operating Systems
+toc: true
+toc_label: "Contents"
+toc_icon: "cog"
+---
 
-## Introduction
-So, you’re confused on what 'Multithreading' is. Don’t worry, most people are to some extent. It may surprise you, but even I struggled with them at some point (who knew I couldn’t know something? Consider me shocked too).
-
-Multithreading is likely one of those things you probably still won't fully comprehend no matter how competent you are (partially because it's a difficult topic, but also because quite a lot of it is sort of undefined in a way, but more on that later).
+So, you’re confused on what 'Multithreading' is. Don’t worry, most people are to some extent. Multithreading is likely one of those things you probably still won't fully comprehend no matter how competent you are (partially because it's a difficult topic, but also because quite a lot of it is sort of undefined in a way, but more on that later).
 
 ## Types of multithreading
 Threads exist in multiple ways. There are at least four different types of threads (depending on who you ask, and how you define 'thread'):

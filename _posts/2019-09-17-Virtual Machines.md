@@ -1,21 +1,23 @@
 ---
 title: "Virtual Machines"
-last_modified_at: 2019-09-17T11:20:02+12:00
 categories:
-  - teaching
+  - Teaching
 tags:
   - Virtual Machines
   - Hypervisors
+  - Operating Systems
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 ---
 
-# Virtual Machines
-
 A Virtual Machine refers to the _emulation_ of a computer system, which we typically refer to as a _guest_. The Virtual Machine runs the same architecture as the machine running the virtualisation software (which is actually the difference between _emulation_ and _virtualisation_), which we refer to as the _host_.
 
-When we talk about Virtual Machines, we often refer to them in manners such as ```"I have a Linux guest running in VirtualBox"```. In this case, we are referring to the _Hypervisor_, VirtualBox, which runs our Linux Virtual Machine.
+When we talk about Virtual Machines, we often refer to them in manners such as:
+
+ > I have a Linux guest running in VirtualBox.
+
+In this case, we are referring to the _Hypervisor_, VirtualBox, which runs our Linux Virtual Machine.
 
 A Hypervisor is a piece of software, firmware, or hardware which creates and runs the Virtual Machine. In the above scenario, Virtual Box is the hypervisor and Linux is the Virtual Machine we are running. Such Hypervisors come in two different types.
 
